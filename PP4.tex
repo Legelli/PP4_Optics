@@ -158,7 +158,38 @@ Poiché il fotodiodo permette l'ingresso della luce attraverso un foro di diamet
 %             MISURA DELLA FINESSE
 %==================================================
 \section{Misura della finesse al variare delle combinazioni di specchi}
-
+Si vuole misurare la \emph{finesse} dell'interferometro, definita come 
+\begin{equation}\label{eq:finesse}
+	\mathcal{F} = \pi \frac{\sqrt{R} }{1-R}
+\end{equation}
+essendo $R$ la media geometrica delle riflettività dei due specchi utilizzati per costruire l'interferometro. Assumendo che la dilatazione della ceramica sia lineare rispetto alla tensione $V$ applicata, si deduce che la variazione di fase $\Delta$ tra le onde piane uscenti dall'interferometro, proporzionale alla variazione di distanza $D$ tra i due specchi dell'interferometro, è anch'essa lineare in $V$, cioè si assume che
+\[
+	\Delta = b V.
+\]
+Per stimare il coefficiente di proporzionalità $b$ si prendono le misure $V$ e $\tilde{V}$ di tensione corrispondenti a due massimi consecutivi che siano sulla stessa rampa dell'onda triangolare, uguagliando le intensità corrispondenti ai due diversi ordini si trova che
+\begin{equation}\label{eq:b}
+	b=\frac{2\pi}{\tilde{V}-V}.
+\end{equation}
+Inoltre, imponendo che l'intensità sia metà di quella massima, e nell'approssimazione in cui $\Delta V b/ 2<< 1$, essendo $\Delta V$ la semilarghezza del picco della funzione di Airy corrispondente ad intensità dimezzata, si trova
+\begin{equation}\label{eq:F_approx}
+	\mathcal{F} \approx \frac{\tilde{V} - V}{2 \Delta V}.
+\end{equation}
+Si effettuano le misure di tensione per diverse combinazioni di specchi, le misure sono riportate in Tabella \ref{tab:parte_due}. Si riporta in Figura \ref{fig:parte_due_retta} $\mathcal{F}^{-2}$, con $\mathcal{F}$ stimata da (\ref{eq:F_approx}), in funzione di $\mathcal{F}_\mathrm{teo}^{-2}$, dove $\mathcal{F}_\mathrm{teo}$ è la finesse teorica data da (\ref{eq:finesse}), in Figura \ref{fig:parte_due_F} si riporta invece l'andamento della finesse sperimentale in funzione della media geometrica delle riflettività utilizzate.
+\begin{Figure}
+	\begin{center}
+	\includegraphics[width=\linewidth]{parte_due.pdf}
+	\captionof{figure}{Andamento del quadrato del reciproco della finesse sperimentale in funzione del quadrato del reciproco della finesse ideale}
+	\label{fig:parte_due_retta}
+	\end{center}
+\end{Figure}
+\begin{Figure}
+	\begin{center}
+	\includegraphics[width=\linewidth]{parte_due_F.pdf}
+	\captionof{figure}{Andamento della finesse sperimentale in funzione della media geometrica delle riflettività dei due specchi dell'interferometro, si riporta la finesse ideale per confronto}
+	\label{fig:parte_due_F}
+	\end{center}
+\end{Figure}
+Come è evidente dalla Figura \ref{fig:parte_due_F} , le misure si discostano molto dall'andamento ideale. Ciò è inoltre confermato dalla Figura \ref{fig:parte_due_retta}, nel quale ci si aspettava un andamento lineare con coefficiente angolare unitario e intercetta positiva. Si conclude che questo risultato sia dovuto ad un errore sistematico nell'allineamento del sistema: l'allineamento è stato infatti realizzato sistematicamente al fine di massimizzare la visibilità delle frange, ma senza preoccuparsi di allineare il centro della figura di interferenza con il fotodiodo, una misura conclusiva fatta allineando correttamente il sistema ha infatti restituito il valore teorico atteso.
 
 
 %==================================================
