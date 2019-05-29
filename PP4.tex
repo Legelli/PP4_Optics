@@ -152,6 +152,35 @@ Poiché il fotodiodo permette l'ingresso della luce attraverso un foro di diamet
 %             FIT DELLA FUNZIONE DI AIRY
 %==================================================
 \section{Misura della funzione di trasmissione e fit alla funzione di Airy}
+In questa parte dell'esperienza si utilizzano specchi di riflettività $R=0.9$. Dalla relazione \begin{equation}\label{eqn:finesse}
+F_{teo} = \frac{\pi\sqrt R}{1-R}
+\end{equation}
+si ricava un valore teorico di finesse $F_{teo} = 29.8$. La ceramica piezoelettrica montata sulla slitta viene pilotata da un segnale triangolare di periodo $T=??$. Si imposta il filtro attenuatore in modo da avere intensità massima $I_{max} = \SI{6.4\pm0.2}{V}$, ben al di sotto della regione di saturazione. Sono riportati in Tabella (\ref{tab:parte1}) il segnale di rampa, la risposta del fotodiodo e l'istante temporale associato ad ogni misura\footnote{Si prende l'origine temporale $t=0$ coincidente con l'istante in cui viene effettuata la prima misura.}.
+
+Si effettua il fit dei dati sperimentali usando come espressione per la funzione di Airy \begin{equation}\label{eqn:airy}
+T=\frac{1}{1+\frac{4F_{exp}^2}{\pi^2}\,\sin^2(A(V_{tr}-V_0))},
+\end{equation}
+espressa in funzione della finesse sperimentale $F_{exp}$ e dello sfasamento $\frac{\Delta}{2} = A(V_{tr}-V_0)$.  Sono stati introdotti i parametri $A$ e $V_0$ rappresentanti rispettivamente il coefficiente di proporzionalità tra lo sfasamento e la tensione dell'onda triangolare, ed il fattore traslazione della funzione di trasferimento lungo l'asse delle ascisse. Il fit, riportato in Figura (\ref{fig:fit-airy}), ha come coefficienti \begin{align*}
+&F_{exp} = \SI{29.1\pm0.9}{}\\[0.2cm]
+&A = \SI{0.472\pm0.002}{V^{-1}}\\[0.2cm]
+&V_0 = \SI{3.01\pm0.02}{V}
+\end{align*}
+Il valore sperimentale di finesse risulta perfettamente compatibile, entro l'incertezza, con quello teorico. Si evidenzia che, per chiarezza grafica, l'intensità riportata in figura è stata normalizzata rispetto al suo massimo.
+\begin{Figure}
+	\begin{center}
+	\hbox{\hspace{-0.8cm}
+	\includegraphics[width=1.1\linewidth]{fit-airy}}
+	\captionof{figure}{Fit della funzione di Airy.}
+	\label{fig:fit-airy}
+	\end{center}
+\end{Figure}
+Si ricorda che $\Delta = b\,V_{tr}$ con \[
+b = \frac{2\pi}{V_{tr_N}-V_{tr_{N+1}}},
+\]
+dove $V_{tr_N}$ è il valore di tensione dell'onda triangolare corrispondente al picco di ordine $N$. Il valore del parametro $A$ è dunque da confrontarsi con \[
+\frac{b}{2} = \SI{0.476\pm0.001}{V^{-1}},
+\]
+ch risulta essere compatibile, entro due sigma, con il valore ricavato dal fit.
 
 
 %==================================================
