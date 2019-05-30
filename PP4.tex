@@ -180,7 +180,8 @@ Il valore sperimentale di finesse risulta compatibile, entro una deviazione stan
 	\end{center}
 \end{Figure}
 
-Si ricorda che $\Delta = b\,V_{tr}$ con \[
+Si ricorda che $\Delta = b\,V_{tr}$ con 
+\[ \label{eq:b}
 b = \frac{2\pi}{V_{tr_N}-V_{tr_{N+1}}},
 \]
 dove $V_{tr_N}$ è il valore di tensione dell'onda triangolare corrispondente al picco di ordine $N$. Il valore del parametro $A$ è dunque da confrontarsi con \[
@@ -195,21 +196,17 @@ Si osserva come la curva di fit sia più vicina a quella sperimentale in corrisp
 %             MISURA DELLA FINESSE
 %==================================================
 \section{Misura della finesse al variare delle combinazioni di specchi}
-Nella relazione~(\ref{eq:finesse}) per la \emph{finesse} $\mathcal{F}$ si utilizzerà come valore di $R$ la media geometrica delle riflettività dei due specchi utilizzati per costruire l'interferometro. Assumendo che la dilatazione della ceramica sia lineare rispetto alla tensione $V_\text{tr}$ applicata, si deduce che la variazione di fase $\Delta$ tra le onde piane uscenti dall'interferometro, proporzionale alla variazione di distanza $D$ tra i due specchi dell'interferometro, è anch'essa lineare in $V_\text{tr}$, cioè si assume che
-\[
-	\Delta = b V_\text{tr}.
-\]
-Per stimare il coefficiente di proporzionalità $b$ si prendono le misure $V$ e $\tilde{V}$ di tensione corrispondenti a due massimi consecutivi che siano sulla stessa rampa dell'onda triangolare, uguagliando le intensità corrispondenti ai due diversi ordini si trova che
+Nella relazione~(\ref{eq:finesse}) per la \emph{finesse} $\mathcal{F}$ si utilizzerà come valore di $R$ la media geometrica delle riflettività dei due specchi utilizzati per costruire l'interferometro. Utilizzando la relazione~\ref{eq:b} riferita ai due massimi consecutivi $V$ e $\tilde{V}$ che siano sulla stessa rampa dell'onda triangolare, si ha
 \begin{equation}\label{eq:b}
 	b=\frac{2\pi}{\tilde{V}-V}.
 \end{equation}
 
-Inoltre, nell'approssimazione in cui ${\Delta V b/ 2 \ll 1}$, si stima la larghezza a metà altezza $\Delta V$ del picco della funzione di Airy imponendo che l'intensità sia pari a metà di quella massima, e si trova
+Nell'approssimazione in cui ${\Delta V b/ 2 \ll 1}$, si stima la larghezza a metà altezza $\Delta V$ del picco della funzione di Airy imponendo che l'intensità sia pari a metà di quella massima, e si trova
 \begin{equation}\label{eq:F_approx}
 	\mathcal{F} \simeq \frac{\tilde{V} - V}{2 \Delta V}.
 \end{equation}
 
-Poiché si utilizza un segnale triangolare si ha proporzionalità tra la tensione della rampa e l'istante di tempo a cui sono riferiti i punti sperimentali, rispetto ad uno zero arbitrario. Le misure di tensione vengono pertanto sostituite con misure di tempo, più convenienti poiché sono riportate sull'ascissa dell'oscilloscopio, effettuate mediante i cursori dello strumento. Si determinano pertanto la distanza temporale tra due picchi e la larghezza a metà altezza degli stessi.
+Poiché si utilizza un segnale triangolare si ha proporzionalità tra la tensione della rampa e l'istante di tempo a cui sono riferiti i punti sperimentali, prendendo come zero il primo dato acquisito dall'oscilloscopio. Le misure di tensione vengono pertanto sostituite con misure di tempo, più convenienti poiché sono riportate sull'ascissa dell'oscilloscopio, effettuate mediante i cursori dello strumento. Si determinano pertanto la distanza temporale tra due picchi e la larghezza a metà altezza degli stessi.
  
 Si ripetono tali misure per diverse combinazioni di specchi; esse sono riportate in Tabella \ref{tab:parte_due}, in Appendice. Si riportano in Figura \ref{fig:parte_due_retta} i valori di $\mathcal{F}^{-2}$ ricavati sperimentalmente, con $\mathcal{F}$ stimata da (\ref{eq:F_approx}), in funzione di $F_\mathrm{teo}^{-2}$, dove $F_\mathrm{teo}$ è la finesse teorica data da (\ref{eq:finesse}).
 \begin{Figure}
@@ -222,6 +219,8 @@ Si ripetono tali misure per diverse combinazioni di specchi; esse sono riportate
 \end{Figure}
 
 Come è evidente, le misure si discostano molto dall'andamento previsto: ci si aspettava infatti un andamento lineare con coefficiente angolare unitario e intercetta positiva. Al contrario, il coefficiente angolare restituito dal fit risulta essere $0.8$, ma con chi quadro di ordine \SI{1.6 e4}{}, che caratterizza la scarsa aderenza al modello teorico. Si conclude che questo sia dovuto ad un errore sistematico nell'allineamento del sistema: l'allineamento è stato infatti realizzato sistematicamente al fine di massimizzare la visibilità delle frange, ma non si è verificato ad ogni cambiamento di specchi che il centro della figura di interferenza fosse allineato con il fotodiodo. D'altra parte, infatti, una ulteriore misura fatta allineando correttamente il sistema ha restituito per la finesse il valore di \SI{9.1 \pm 0.9}{} contro un valore teorico previsto di $14$ ($R=0.8$), meno discosto dalla teoria rispetto agli altri punti.
+
+Si ipotizza inoltre che la discrepanza tra il modello e i dati sperimentali sia amplificata dal fatto che, nelle condizioni in cui l'allineamento non è corretto, non è più valida nemmeno l'approssimazione ${\Delta V b/ 2 \ll 1}$.
 
 %==================================================
 %             MISURA DI LAMBDA
