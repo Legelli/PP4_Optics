@@ -152,20 +152,25 @@ Poiché il fotodiodo permette l'ingresso della luce attraverso un foro di diamet
 %             FIT DELLA FUNZIONE DI AIRY
 %==================================================
 \section{Misura della funzione di trasmissione e fit alla funzione di Airy}
-In questa parte dell'esperienza si utilizzano specchi di riflettività $R=0.9$. Dalla relazione \begin{equation}\label{eqn:finesse}
+In questa parte dell'esperienza si utilizzano specchi di riflettività $R=0.9$. Dalla relazione 
+\begin{equation}\label{eq:finesse}
 F_{teo} = \frac{\pi\sqrt R}{1-R}
 \end{equation}
-si ricava un valore teorico di finesse $F_{teo} = 29.8$. La ceramica piezoelettrica montata sulla slitta viene pilotata da un segnale triangolare di periodo $T=??$. Si imposta il filtro attenuatore in modo da avere intensità massima $I_{max} = \SI{6.4\pm0.2}{V}$, ben al di sotto della regione di saturazione. Sono riportati in Tabella (\ref{tab:parte1}) il segnale di rampa, la risposta del fotodiodo e l'istante temporale associato ad ogni misura\footnote{Si prende l'origine temporale $t=0$ coincidente con l'istante in cui viene effettuata la prima misura.}.
+si ricava un valore teorico di finesse $F_{teo} = 29.8$. La ceramica piezoelettrica montata sulla slitta viene pilotata da un segnale triangolare, al fine di osservare due massimi della funzione di trasmissione. Si imposta il filtro attenuatore in modo da avere intensità massima $I_{max} = \SI{6.4\pm0.2}{V}$, ben al di sotto della regione di saturazione. Si acquisiscono i punti sperimentali relativi al segnale di rampa e alla risposta del fotodiodo, in funzione del tempo\footnote{Si prende l'origine temporale $t=0$ coincidente con l'istante in cui viene effettuata la prima misura.}, direttamente dall'oscilloscopio, e si riportano tali punti nel grafico di Figura~\ref{fig:fit-airy}.
 
 Si effettua il fit dei dati sperimentali usando come espressione per la funzione di Airy \begin{equation}\label{eqn:airy}
-T=\frac{1}{1+\frac{4F_{exp}^2}{\pi^2}\,\sin^2(A(V_{tr}-V_0))},
+T=\frac{1}{1+\frac{4F_{exp}^2}{\pi^2}\,\sin^2\big(A(V_{tr}-V_0)\big)},
 \end{equation}
-espressa in funzione della finesse sperimentale $F_{exp}$ e dello sfasamento $\frac{\Delta}{2} = A(V_{tr}-V_0)$.  Sono stati introdotti i parametri $A$ e $V_0$ rappresentanti rispettivamente il coefficiente di proporzionalità tra lo sfasamento e la tensione dell'onda triangolare, ed il fattore traslazione della funzione di trasferimento lungo l'asse delle ascisse. Il fit, riportato in Figura (\ref{fig:fit-airy}), ha come coefficienti \begin{align*}
+espressa in funzione della finesse sperimentale $F_{exp}$ e dello sfasamento $\Delta/2 = A(V_{\text{tr}}-V_0)$, dove $V_{\text{tr}}$ è il valore della tensione dell'onda triangolare, e normalizzata al massimo dell'intensità. Sono stati introdotti i parametri $A$ e $V_0$ rappresentanti rispettivamente il coefficiente di proporzionalità tra lo sfasamento e la tensione dell'onda triangolare, ed il fattore traslazione della funzione di trasferimento lungo l'asse delle ascisse. 
+
+Il fit, riportato in Figura (\ref{fig:fit-airy}), ha come coefficienti 
+\begin{align*}
 &F_{exp} = \SI{29.1\pm0.9}{}\\[0.2cm]
 &A = \SI{0.472\pm0.002}{V^{-1}}\\[0.2cm]
 &V_0 = \SI{3.01\pm0.02}{V}
 \end{align*}
-Il valore sperimentale di finesse risulta perfettamente compatibile, entro l'incertezza, con quello teorico. Si evidenzia che, per chiarezza grafica, l'intensità riportata in figura è stata normalizzata rispetto al suo massimo.
+Il valore sperimentale di finesse risulta compatibile, entro una deviazione standard, con quello teorico. 
+
 \begin{Figure}
 	\begin{center}
 	\hbox{\hspace{-0.8cm}
@@ -174,52 +179,49 @@ Il valore sperimentale di finesse risulta perfettamente compatibile, entro l'inc
 	\label{fig:fit-airy}
 	\end{center}
 \end{Figure}
+
 Si ricorda che $\Delta = b\,V_{tr}$ con \[
 b = \frac{2\pi}{V_{tr_N}-V_{tr_{N+1}}},
 \]
 dove $V_{tr_N}$ è il valore di tensione dell'onda triangolare corrispondente al picco di ordine $N$. Il valore del parametro $A$ è dunque da confrontarsi con \[
 \frac{b}{2} = \SI{0.476\pm0.001}{V^{-1}},
 \]
-ch risulta essere compatibile, entro due sigma, con il valore ricavato dal fit.
+che risulta essere compatibile, entro due sigma, con il valore ricavato dal fit.
+
+Si osserva come la curva di fit sia più vicina a quella sperimentale in corrispondenza dei massimi, mentre è evidente come i minimi delle due siano molto più distanti, al di fuori delle barre di incertezza. Si ritiene che questo sia dovuto alla ridotta sensibilità del fotodiodo nella regione in cui il segnale è comparabile con il fondo, che non permette di discriminare tra i due; oltretutto, si ipotizza che in prossimità dei minimi non sia superata la tensione di soglia del rivelatore, al di sotto della quale non vi è linearità della risposta. L'identificazione della larghezza dei massimi e della distanza tra essi è però indipendente dall'andamento della tensione nella regione compresa tra essi, e pertanto non compromette la qualità della stima della \emph{finesse}.  
 
 
 %==================================================
 %             MISURA DELLA FINESSE
 %==================================================
 \section{Misura della finesse al variare delle combinazioni di specchi}
-Si vuole misurare la \emph{finesse} dell'interferometro, definita come 
-\begin{equation}\label{eq:finesse}
-	\mathcal{F} = \pi \frac{\sqrt{R} }{1-R}
-\end{equation}
-essendo $R$ la media geometrica delle riflettività dei due specchi utilizzati per costruire l'interferometro. Assumendo che la dilatazione della ceramica sia lineare rispetto alla tensione $V$ applicata, si deduce che la variazione di fase $\Delta$ tra le onde piane uscenti dall'interferometro, proporzionale alla variazione di distanza $D$ tra i due specchi dell'interferometro, è anch'essa lineare in $V$, cioè si assume che
+Nella relazione~(\ref{eq:finesse}) per la \emph{finesse} $\mathcal{F}$ si utilizzerà come valore di $R$ la media geometrica delle riflettività dei due specchi utilizzati per costruire l'interferometro. Assumendo che la dilatazione della ceramica sia lineare rispetto alla tensione $V_\text{tr}$ applicata, si deduce che la variazione di fase $\Delta$ tra le onde piane uscenti dall'interferometro, proporzionale alla variazione di distanza $D$ tra i due specchi dell'interferometro, è anch'essa lineare in $V_\text{tr}$, cioè si assume che
 \[
-	\Delta = b V.
+	\Delta = b V_\text{tr}.
 \]
 Per stimare il coefficiente di proporzionalità $b$ si prendono le misure $V$ e $\tilde{V}$ di tensione corrispondenti a due massimi consecutivi che siano sulla stessa rampa dell'onda triangolare, uguagliando le intensità corrispondenti ai due diversi ordini si trova che
 \begin{equation}\label{eq:b}
 	b=\frac{2\pi}{\tilde{V}-V}.
 \end{equation}
-Inoltre, imponendo che l'intensità sia metà di quella massima, e nell'approssimazione in cui $\Delta V b/ 2<< 1$, essendo $\Delta V$ la semilarghezza del picco della funzione di Airy corrispondente ad intensità dimezzata, si trova
+
+Inoltre, nell'approssimazione in cui ${\Delta V b/ 2 \ll 1}$, si stima la larghezza a metà altezza $\Delta V$ del picco della funzione di Airy imponendo che l'intensità sia pari a metà di quella massima, e si trova
 \begin{equation}\label{eq:F_approx}
-	\mathcal{F} \approx \frac{\tilde{V} - V}{2 \Delta V}.
+	\mathcal{F} \simeq \frac{\tilde{V} - V}{2 \Delta V}.
 \end{equation}
-Si effettuano le misure di tensione per diverse combinazioni di specchi, le misure sono riportate in Tabella \ref{tab:parte_due}. Si riporta in Figura \ref{fig:parte_due_retta} $\mathcal{F}^{-2}$, con $\mathcal{F}$ stimata da (\ref{eq:F_approx}), in funzione di $\mathcal{F}_\mathrm{teo}^{-2}$, dove $\mathcal{F}_\mathrm{teo}$ è la finesse teorica data da (\ref{eq:finesse}), in Figura \ref{fig:parte_due_F} si riporta invece l'andamento della finesse sperimentale in funzione della media geometrica delle riflettività utilizzate.
+
+Poiché si utilizza un segnale triangolare si ha proporzionalità tra la tensione della rampa e l'istante di tempo a cui sono riferiti i punti sperimentali, rispetto ad uno zero arbitrario. Le misure di tensione vengono pertanto sostituite con misure di tempo, più convenienti poiché sono riportate sull'ascissa dell'oscilloscopio, effettuate mediante i cursori dello strumento. Si determinano pertanto la distanza temporale tra due picchi e la larghezza a metà altezza degli stessi.
+ 
+Si ripetono tali misure per diverse combinazioni di specchi; esse sono riportate in Tabella \ref{tab:parte_due}, in Appendice. Si riportano in Figura \ref{fig:parte_due_retta} i valori di $\mathcal{F}^{-2}$ ricavati sperimentalmente, con $\mathcal{F}$ stimata da (\ref{eq:F_approx}), in funzione di $F_\mathrm{teo}^{-2}$, dove $F_\mathrm{teo}$ è la finesse teorica data da (\ref{eq:finesse}).
 \begin{Figure}
 	\begin{center}
-	\includegraphics[width=\linewidth]{parte_due.pdf}
+	\hbox{\hspace{-0.8cm}
+	\includegraphics[width=1.1\linewidth]{parte_due_fit.png}}
 	\captionof{figure}{Andamento del quadrato del reciproco della finesse sperimentale in funzione del quadrato del reciproco della finesse ideale}
 	\label{fig:parte_due_retta}
 	\end{center}
 \end{Figure}
-\begin{Figure}
-	\begin{center}
-	\includegraphics[width=\linewidth]{parte_due_F.pdf}
-	\captionof{figure}{Andamento della finesse sperimentale in funzione della media geometrica delle riflettività dei due specchi dell'interferometro, si riporta la finesse ideale per confronto}
-	\label{fig:parte_due_F}
-	\end{center}
-\end{Figure}
-Come è evidente dalla Figura \ref{fig:parte_due_F} , le misure si discostano molto dall'andamento ideale. Ciò è inoltre confermato dalla Figura \ref{fig:parte_due_retta}, nel quale ci si aspettava un andamento lineare con coefficiente angolare unitario e intercetta positiva. Si conclude che questo risultato sia dovuto ad un errore sistematico nell'allineamento del sistema: l'allineamento è stato infatti realizzato sistematicamente al fine di massimizzare la visibilità delle frange, ma senza preoccuparsi di allineare il centro della figura di interferenza con il fotodiodo, una misura conclusiva fatta allineando correttamente il sistema ha infatti restituito il valore teorico atteso.
 
+Come è evidente, le misure si discostano molto dall'andamento previsto: ci si aspettava infatti un andamento lineare con coefficiente angolare unitario e intercetta positiva. Al contrario, il coefficiente angolare restituito dal fit risulta essere $0.8$, ma con chi quadro di ordine \SI{1.6 e4}{}, che caratterizza la scarsa aderenza al modello teorico. Si conclude che questo sia dovuto ad un errore sistematico nell'allineamento del sistema: l'allineamento è stato infatti realizzato sistematicamente al fine di massimizzare la visibilità delle frange, ma non si è verificato ad ogni cambiamento di specchi che il centro della figura di interferenza fosse allineato con il fotodiodo. D'altra parte, infatti, una ulteriore misura fatta allineando correttamente il sistema ha restituito per la finesse il valore di \SI{9.1 \pm 0.9}{} contro un valore teorico previsto di $14$ ($R=0.8$), meno discosto dalla teoria rispetto agli altri punti.
 
 %==================================================
 %             MISURA DI LAMBDA
@@ -247,25 +249,50 @@ Variando quindi la posizione assoluta del secondo specchio del Fabry-Perot, e po
 \lambda^{\text{exp}} = \frac{2(d_1 - d_2)}{m_2 - m_1}.
 \]
 
-Si riportano in Tabella~\ref{tab:stimaLambda} i dati raccolti. La stima della lunghezza d'onda risulta essere
+Si riportano in Tabella~\ref{tab:stimaLambda}, in Appendice, i dati raccolti. La stima della lunghezza d'onda risulta essere
 \[
 \lambda^{\text{exp}} = \SI{ 181 \pm 46}{nm},
 \]
 
-E le corrispondenti lunghezze $d_i^f$ del Fabry-Perot
+e le corrispondenti lunghezze $d_i^f$ del Fabry-Perot
 
-$$d_1^f = \SI{2.8 \pm 0.9}{mm}$$
-$$d_2^f = \SI{0.21 \pm 0.07}{mm}$$
+\[
+\begin{aligned}
+d_1^f &= \SI{2.8 \pm 0.9}{mm} \\
+d_2^f &= \SI{0.21 \pm 0.07}{mm}
+\end{aligned}
+\]
 
-Il termine dominante nel calcolo delle incertezze risulta essere quello relativo all'ordine di diffrazione. Osserviamo che il valore di $lambda$ determinato sperimentalmente non è compatibile con quello dichiarato dal costruttore. Nemmeno le lunghezze del Fabry Perot sono coerenti con quanto osservato durante l'esperimento, dove l'ordine di grandezza della separazione degli specchi è di circa \SI{1}{cm}. Consideriamo i dati raccolti quando lo specchio mobile dell'interferometro si trova a una distsanza assoluta $d_2$. Secondo la relazione \ref{eq:diff} all'aumentare di $m$ la distanza relativa tra due massimi consecutivi dovrebbe ridursi per via della funzione coseno. Questo non accade nei dati sperimentali raccolti, dove $x_1-x_0 < x_2-x_1$. Ciò porta a pensare a errori di lettura nella presa dati, in particolare di $x_2$, a causa di un non corretto allineamento del fascio.
-Utilizzando invece la lunghezza d'onda fornita dal costruttore $\lambda = \SI{632.8}{nm}$\footnote{\url{https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxvdHRpY2FlbGFib3JhdG9yaW9lZGVscmV8Z3g6MWE0NWExZDNlOTVhMzQ2ZA}} e gli ordini ricavati $m_1$ e $m_2$ si ottiene rispettivamente
-$$d_1^f = \SI{1 \pm 0.2}{cm} $$
-$$d_2^f = \SI{0.73 \pm 0.03}{mm}$$
+Il termine dominante nel calcolo delle incertezze risulta essere quello relativo all'ordine di diffrazione. Osserviamo che il valore di $\lambda$ determinato sperimentalmente non è compatibile con quello dichiarato dal costruttore. Nemmeno le lunghezze del Fabry Perot sono coerenti con quanto osservato durante l'esperimento, dove l'ordine di grandezza della separazione degli specchi è di circa \SI{1}{cm}. Consideriamo i dati raccolti quando lo specchio mobile dell'interferometro si trova a una distsanza assoluta $d_2$. Secondo la relazione~(\ref{eq:diff}) all'aumentare di $m$ la distanza relativa tra due massimi consecutivi dovrebbe ridursi per via della funzione coseno. Questo non accade nei dati sperimentali raccolti, dove $x_1-x_0 < x_2-x_1$. Ciò porta a pensare a errori di lettura nella presa dati, in particolare di $x_2$, a causa di un non corretto allineamento del fascio. Si ritiene infatti che il fotodiodo non abbia rilevato correttamente la presenza di un massimo intermedio, in quanto non avente intensità sufficientemente superiore a quella di soglia.
+Utilizzando invece la lunghezza d'onda fornita dal costruttore $\lambda = \SI{632.8}{nm}$ e gli ordini ricavati $m_1$ e $m_2$ si ottiene rispettivamente
+\[
+\begin{aligned}
+d_1^f &= \SI{1 \pm 0.2}{cm} \\
+d_2^f &= \SI{0.73 \pm 0.03}{mm}
+\end{aligned}
+\]
 
-Osserviamo che $L_1-L_2$ non è compatibile con $d_1 - d_2$. Ciò rafforza l'ipotesi di errori nella stima dell'ordine di diffrazione per la seconda configurazione.
+Osserviamo che $L_1-L_2$ non è compatibile con $d_1 - d_2$. Ciò rafforza l'ipotesi di errori nella stima dell'ordine di diffrazione per la seconda configurazione. Tuttavia, limitandosi alla prima presa dati, si ritiene che la stima della lunghezza del Fabry-Perot sia compatibile con la reale distanza tra gli specchi, che risultava essere, misurata con il metro a nastro, \SI{1.2 \pm 0.2}{cm}.
+
+
+
+%==================================================
+%             CONCLUSIONI
+%==================================================
+\section{Conclusioni}
+Dal fit della funzione di trasmissione con la funzione di Airy si ricava un valore della finesse compatibile con quello teorico. Si è infatti allineato, prima della presa dati, il centro del pattern circolare con il foro del fotodiodo. Al contrario, nella seconda parte, non si è prestata altrettanta attenzione all'allineamento del pattern, ritenendo che la lettura su una frangia vicina potesse portare allo stesso risultato. Si sarebbe potuto adoperare il mezzo diffusore al fine di visualizzare l'intera figura e agevolare l'allineamento.
+
+Si osserva inoltre come la non compatibilità dei punti sperimentali rispetto al modello teorico sia dovuta alla non idealità concettuale dell'apparato: gli specchi non sono infatti perfettamente piani e presentano delle rugosità e imperfezioni, l'onda incidente non è piana (l'andamento è meglio descritto da un fascio gaussiano) e l'allineamento inficia la accuratezza delle misure.
+
+Infine, nella terza parte si ritiene che la scelta di specchi ad elevata riflettività ($R=0.9$) abbia influito sulla lettura dell'intensità da parte del fotodiodo, e sulla conseguente identificazione dell'ordine di interferenza, in quanto è stata ridotta notevolmente l'intensità del fascio.
+
+\end{multicols}
+
+
+\newpage
+\section{Appendice}
 
 \begin{center}
-\begin{table*}
 \captionof{table}{Misure per la stima di $\lambda$}
 \label{tab:stimaLambda}
 \begin{tabular}{c|c|c|c|c|c}
@@ -276,30 +303,17 @@ $d_1 = \SI{13.37 \pm 0.01}{mm}$ & 10.70  & 12.7 & 11.8 &    \SI{9.6 \pm 0.7 e-3}
 $d_2 = \SI{10.75 \pm 0.01}{mm}$ & 14.80   & 13.1 & 8.4  & \SI{8.1 \pm 0.7 e-3}{} & \SI{31.0 \pm 0.7 e-3}{} \\
 \hline
 \end{tabular}
-\begin{tabular}{c|c|c}
-& m & $d^f$ \\
+\newline
+\vspace*{0.4cm}
+\newline
+\begin{tabular}{c|c|c|c}
+& m & $d^f [\SI{}{mm}]$ & $d^f [\SI{}{mm}]$, $\lambda=\SI{632.8}{nm}$ \\
 \hline
-$d_1 = \SI{13.37 \pm 0.01}{mm}$ & \SI{31 \pm 7 e3}{} & \SI{2.8 \pm 0.9}{mm}\\
-$d_2 = \SI{10.75 \pm 0.01}{mm}$ & \SI{2.3 \pm 0.1 e3}{}  & \SI{0.21 \pm 0.07}{mm}\\
+$d_1 = \SI{13.37 \pm 0.01}{mm}$ & \SI{31 \pm 7 e3}{} & \SI{2.8 \pm 0.9}{} & \SI{10 \pm 2}{}\\
+$d_2 = \SI{10.75 \pm 0.01}{mm}$ & \SI{2.3 \pm 0.1 e3}{}  & \SI{0.21 \pm 0.07}{} & \SI{0.73 \pm 0.03}{}\\
 \hline
 \end{tabular}
-\end{table*}
 \end{center}
-
-
-
-
-
-
-
-
-
-\end{multicols}
-
-
-\newpage
-\section{Appendice}
-
 
 
 %ESEMPIO DI FIGURA
@@ -327,6 +341,5 @@ $d_2 = \SI{10.75 \pm 0.01}{mm}$ & \SI{2.3 \pm 0.1 e3}{}  & \SI{0.21 \pm 0.07}{mm
 %\hline
 %\end{tabular}
 %\end{center}
-
 
 \end{document}
